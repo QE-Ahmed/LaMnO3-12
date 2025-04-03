@@ -1,0 +1,86 @@
+System.CurrrentDirectory         ./
+System.Name                     LaMnO3
+level.of.stdout                   1
+level.of.fileout                  1
+DATA.PATH                         ../../../../../DFT_DATA19
+
+Species.Number                     3
+<Definition.of.Atomic.Species
+  O     O6.0-s2p2       O_PBE19  
+  Mn    Mn6.0-s3p2d1      Mn_PBE19
+  La    La8.0-s3p2d2f1    La_PBE19
+Definition.of.Atomic.Species>
+
+Atoms.Number                       20
+Atoms.SpeciesAndCoordinates.Unit   FRAC
+<Atoms.SpeciesAndCoordinates
+  1     La       0.005050     0.290380     0.291570    5.5  5.5   
+  2     La       0.870700     0.171140     0.288570    5.5  5.5   
+  3     La       0.482820     0.071140     0.101500    5.5  5.5   
+  4     La       0.392930     0.390380     0.678630    5.5  5.5   
+  5     Mn       0.100000     0.100000     0.100000   10.0  5.0   
+  6     Mn       0.387880     0.000000     0.390060   10.0  5.0 
+  7     Mn       0.387880     0.680750     0.290060   10.0  5.0   
+  8     Mn       0.100000     0.580750     0.000000   10.0  5.0 
+  9     O        0.252460     0.681580     0.175950    3.0  3.0   
+  10    O        0.723300     0.579930     0.504180    3.0  3.0   
+  11    O        0.235420     0.679930     0.566020    3.0  3.0   
+  12    O        0.640340     0.681580     0.314120    3.0  3.0   
+  13    O        0.640340     0.560680     0.214120    3.0  3.0   
+  14    O        0.435420     0.100820     0.566020    3.0  3.0   
+  15    O        0.623300     0.000820     0.504180    3.0  3.0   
+  16    O        0.152460     0.460680     0.175950    3.0  3.0   
+  17    O        0.103430     0.151140     0.000790    3.0  3.0   
+  18    O        0.972320     0.490380     0.679340    3.0  3.0   
+  19    O        0.584440     0.390380     0.490860    3.0  3.0  
+  20    O        0.491310     0.251140     0.389280    3.0  3.0   
+Atoms.SpeciesAndCoordinates>
+
+Atoms.UnitVectors.Unit             Ang
+<Atoms.UnitVectors
+     5.351500     0.000000     0.000000
+     0.000000     5.185700     0.000000
+     0.000000     0.000000     6.897900
+Atoms.UnitVectors>
+
+scf.XcType                    GGA-PBE  
+scf.SpinPolarization          On      
+scf.ElectronicTemperature     300.0
+scf.energycutoff              400.0
+scf.maxIter                   100
+scf.EigenvalueSolver          band
+scf.Kgrid                     6 6 4
+scf.system.charge             0.8     # default=0.0    
+scf.Mixing.Type               rmm-diisk
+scf.Init.Mixing.Weight        0.05
+scf.Min.Mixing.Weight         0.01
+scf.Max.Mixing.Weight         0.30
+scf.Mixing.History            25
+scf.Mixing.StartPulay         15
+scf.criterion                 1.0e-7
+
+MD.Type                       nomd
+MD.maxIter                    1
+MD.TimeStep                   1.0
+MD.Opt.criterion              0.0003
+
+Dos.fileout                   off
+Dos.Erange                    -25.0  20.0
+Dos.Kgrid                     10  6  10
+
+Band.dispersion               off
+Band.Nkpath                   12
+<Band.kpath
+  15  0.000000 0.000000 0.000000   0.000000 0.000000 0.500000   G X
+  15  0.000000 0.000000 0.500000   0.500000 0.000000 0.500000   X S
+  15  0.500000 0.000000 0.500000   0.500000 0.000000 0.000000   S Y
+  15  0.500000 0.000000 0.000000   0.000000 0.000000 0.000000   Y G
+  10  0.000000 0.000000 0.000000   0.000000 0.500000 0.000000   G Z
+  15  0.000000 0.500000 0.000000   0.000000 0.500000 0.500000   Z U
+  15  0.000000 0.500000 0.500000   0.500000 0.500000 0.500000   U R
+  15  0.500000 0.500000 0.500000   0.500000 0.500000 0.000000   R T
+  15  0.500000 0.500000 0.000000   0.000000 0.500000 0.000000   T Z
+  10  0.500000 0.000000 0.000000   0.500000 0.500000 0.000000   Y T
+  10  0.000000 0.500000 0.500000   0.000000 0.000000 0.500000   U X
+  10  0.500000 0.000000 0.500000   0.500000 0.500000 0.500000   S R
+Band.kpath>
